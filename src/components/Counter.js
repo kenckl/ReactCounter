@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Counter extends Component {
     
@@ -10,11 +10,14 @@ export default class Counter extends Component {
     }
 
     onIncrease = () => {
-        this.setState(prevState => ({number: prevState.number+1}));
+        this.setState(prevState => (
+            {number: prevState.number+1
+            }), () => this.props.sumOfAll(1));
     };
 
     onDecrease = () => {
-        this.setState(prevState => ({number: prevState.number-1}));
+        this.setState(prevState => ({number: prevState.number-1
+        }), () => this.props.sumOfAll(-1));
     };
     
     render() {

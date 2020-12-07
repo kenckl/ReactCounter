@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import CounterGroup from "./CounterGroup"
+import React, { Component } from 'react';
+import CounterGroup from "./CounterGroup";
+import CounterGroupSum from "./CounterGroupSum";
 
 export default class MultiCounter extends Component {
     constructor(props){
@@ -13,6 +14,12 @@ export default class MultiCounter extends Component {
         console.log(event.target.value);
         this.setState({size: event.target.value});
     };
+
+    sumOfAll = (valueToAdd) => {
+        this.setState((prevNumState) => ({
+            sum: prevNumState.sum + valueToAdd
+        }))
+    };
     
     render() {
         const size = this.state.size;
@@ -20,7 +27,8 @@ export default class MultiCounter extends Component {
         return (
             <div>
                 <input type ="number" value={size} onChange={this.onChange} />
-                <CounterGroup size={size} />
+                <CounterGroupSum sum={this.state.sum}/>
+                <CounterGroup size={size} sumOfAll={this.sumOfAll} />
             </div>
         );
     }

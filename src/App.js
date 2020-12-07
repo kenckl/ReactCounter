@@ -1,6 +1,5 @@
 import React from "react";
 import MultiCounter from "./components/MultiCounter";
-import CounterGroup from "./com[onents/CounterGroup"
 import './App.css';
 
 function App() {
@@ -10,8 +9,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <MultiCounter />
-        <input type="number" onChange={this.onChange}/>
-        <CounterGroup size={size} />
       </header>
     </div>
   );
