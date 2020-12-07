@@ -9,10 +9,6 @@ export default class MultiCounter extends Component {
         };
     }
 
-    componentDidMpunt(){
-        console.log("Hello");
-    }
-
     onChange = (event) => {
         console.log(event.target.value);
         this.setState({size: event.target.value});
