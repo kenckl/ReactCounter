@@ -5,22 +5,20 @@ export default class Counter extends Component {
     constructor(props){
         super(props);
         this.state = {
-            number: 0,
+            number: 0
         };
     }
 
     onIncrease = () => {
-        this.setState(prevState => (
-            {number: prevState.number+1
-            }), () => this.props.sumOfAll(1));
-    };
+        this.setState((prevState) => ({number: prevState.number+1}), () => this.props.sumOfAll(1));
+    }
 
     onDecrease = () => {
-        this.setState(prevState => ({number: prevState.number-1
-        }), () => this.props.sumOfAll(-1));
+        this.setState((prevState) => ({number: prevState.number-1}), () => this.props.sumOfAll(-1));
     };
     
     render() {
+        const {number} = this.state;
         return (
             <div>
                 <input type="button" value="+" onClick={this.onIncrease} />

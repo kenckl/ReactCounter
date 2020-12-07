@@ -11,10 +11,11 @@ export default class CounterGroup extends Component {
         const size = this.props.size;
         const initArraySize = this.initArraySize(size);
 
+
         return (
             <div>
                 {initArraySize.map((value) => ( 
-                    <Counter key={value} />
+                    <Counter key={value} sumOfAll={this.props.sumOfAll}/>
                 ))}
             </div>
         );
