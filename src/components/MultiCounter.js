@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
-import CounterGroup from "./CounterGroup";
-import CounterGroupSum from "./CounterGroupSum";
+import CounterGroupSumContainer from '../containers/CounterGroupSumContainer';
+import CounterGroupContainer from '../containers/CounterGroupContainer';
+import CounterGroupSizeGeneratorContainer from '../containers/CounterGroupSizeGeneratorContainer';
 
 export default class MultiCounter extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            size: 0,
-            sum: 0
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         size: 0,
+    //         sum: 0
+    //     };
+    // }
 
-    onChange = (event) => {
-        this.setState({size: event.target.value, sum:0});
-    };
+    // onChange = (size) => {
+    //     this.setState({size:size, sum: 0});
+    // }
 
-    sumOfAll = (valueToAdd) => {
-        this.setState((prevNumState) => ({
-            sum: prevNumState.sum + valueToAdd
-        }));
-    };
-    
+    // sumOfAll = (valueChange) => {
+    //     this.setState((prevNumState) => ({
+    //         sum: prevNumState.sum + valueChange
+    //     }));
+    // };
+
     render() {
-        const size = this.state.size;
-        const sum = this.state.sum;
-        
+        // const size = this.state.size;
+        // const sum = this.state.sum;
+
         return (
             <div>
-                <input type ="number" value={this.state.size} onChange={this.onChange} />
-                <CounterGroupSum sum={this.state.sum}/>
-                <CounterGroup size={this.state.size} sumOfAll={this.sumOfAll} />
+                <CounterGroupSizeGeneratorContainer />
+                <CounterGroupSumContainer />
+                <CounterGroupContainer />
             </div>
         );
     }
